@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html manifest="manifest.php">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ChineseFood</title>
+	<meta name="author" content="May Woo" />	
+	<meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon" href="icon.png"/>
+  <link rel="apple-touch-startup-image" href="default.png" /> 
+  <style type="text/css" media="screen">@import "jqtouch/jqtouch.min.css";</style>
+	<style type="text/css" media="screen">@import "css/iphone.css";</style>
+  <script type="text/javascript" src="phonegap.js" charset="utf-8"></script>
+  <script src="jqtouch/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+  <script src="scripts/testyourself.js" type="application/x-javascript" charset="utf-8"></script>
+  <script src="scripts/iphone.js" type="application/x-javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+            var jQT = new $.jQTouch({
+                icon: 'icon.png',
+                addGlossToIcon: true,
+                startupScreen: 'default.png',
+                statusBar: 'black',
+								fullScreen: true,
+								touchSelector: 'a, .touch', 
+								initializeTouch: 'a, .touch, body > * > div a, a.slide',
+								slideSelector: 'body > * > ul li a, a.slide',
+                preloadImages: [
+										'images/default.png',  
+		 								'images/home.jpg',
+										'images/home_review.jpg',
+										'images/home_test.jpg',
+										'images/home_info.jpg',      
+									  'images/back_button.png',
+                    'images/back_button_clicked.png',
+										'images/button.png'                                   
+                    ]										
+            });	
+  </script> 
+</head>
+<body>
+
+<div id="home" class="current">
+  <div class="review"><a href="#review" class="cube"><img src="images/bg_home_review.jpg" width="320" height="70"/></a></div>
+   <div class="test"><a href="#testyourself" onClick="getCard();"  class="cube"><img src="images/bg_home_test.jpg" width="320" height="65"/></a></div>
+  <div class="info"><a href="#info" class="cube"><img src="images/bg_home_info.jpg" width="320" height="48"/></a></div>
+</div>
+
+<div id="testyourself">
+<div class="toolbar"><a class="back cube" href="#home">Home</a><a href="#testyourself" onClick="getNewCard();" class="button" >New Card</a></div>
+		<div id="card" class="card" onClick="flip(event)">
+			<div id="frontcard" class="frontside face">
+				<img src="images/characters/rice.gif" id="questionImg"/>
+        <p>tap the card for the answer!</p>
+			</div>
+			<div id="backcard" class="backside face">
+				<p><img src="images/review/rice.jpg"  id="answerImg" /></p>
+			</div>
+		</div>
+</div>
+
+<div id="review">
+
+	<div id="title"><a href="#home" class="cube"><img src="images/header.jpg" alt="chinese foodie flashcards" width="320" height="70" /></a></div> 
+  <ul class="edgetoedge">
+    <li><a href="#grains" class="list"><img src="images/icon_grains.jpg" class="list-icon" />
+      rice, noodles, grains </a></li>
+    <li><a href="#vegetables" class="list"><img src="images/icon_veg.jpg" class="list-icon" />
+      vegetables, tofu</a></li>
+    <li><a href="#meatandseafood" class="list"><img src="images/icon_meat.jpg" class="list-icon" />
+      meat, seafood</a></li>
+		<li><a href="#dimsum" class="list"><img src="images/icon_dimsum.jpg" class="list-icon" />
+      dim sum, dumplings</a></li>
+    <li><a href="#fruit" class="list"><img src="images/icon_fruit.jpg" class="list-icon" />
+      fruit</a></li>    
+    <li><a href="#beverages" class="list"><img src="images/icon_beverage.jpg" class="list-icon" />
+      beverages</a></li>
+    <li><a href="#condiments" class="list"><img src="images/icon_spice.jpg" class="list-icon" />
+      condiments, spices</a></li>
+    <li><a href="#useful" class="list"><img src="images/icon_useful.jpg" class="list-icon" />
+      useful words</a></li>
+  </ul>  
+</div>
+
+
+<div id="grains">
+	<div class="toolbar"><h1>rice, noodles, grains</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">
+  	<li><a href="#bread" class="list">bread</a></li>  	 	
+  	<li><a href="#friedbreadsticks" class="list">fried bread sticks</a></li>
+    <li><a href="#friednoodles" class="list">fried noodles</a></li>
+    <li><a href="#friedrice" class="list">fried rice</a></li>
+  	<li><a href="#noodles" class="list">noodles</a></li>
+    <li><a href="#rice" class="list">rice</a></li>
+    <li><a href="#riceporridge" class="list">rice porridge</a></li> 
+    <li><a href="#steamedbuns" class="list">steamed buns</a></li> 
+  </ul> 
+</div>
+
+<div id="vegetables">
+	<div class="toolbar"><h1>vegetables</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">
+  	<li><a href="#asparagus" class="list">asparagus</a></li>
+    <li><a href="#bamboo" class="list">bamboo shoots</a></li>
+    <li><a href="#beansprouts" class="list">beansprouts</a></li>
+  	<li><a href="#bellpepper" class="list">bell pepper</a></li>
+  	<li><a href="#bittermelon" class="list">bitter melon</a></li>
+    <li><a href="#bokchoy" class="list">bok choy</a></li>
+    <li><a href="#broccoli" class="list">broccoli (chinese)</a></li>
+    <li><a href="#cabbage" class="list">cabbage</a></li>
+    <li><a href="#carrot" class="list">carrot</a></li>
+    <li><a href="#cauliflower" class="list">cauliflower</a></li>
+    <li><a href="#celery" class="list">celery</a></li>
+    <li><a href="#corn" class="list">corn</a></li>
+    <li><a href="#cucumber" class="list">cucumber</a></li>
+    <li><a href="#eggplant" class="list">eggplant</a></li>
+    <li><a href="#garlic" class="list">garlic</a></li>
+    <li><a href="#lettuce" class="list">lettuce</a></li>
+    <li><a href="#shitake" class="list">mushrooms (shitake)</a></li>
+    <li><a href="#onion" class="list">onion</a></li>
+    <li><a href="#scallions" class="list">scallions</a></li>
+    <li><a href="#snowpeas" class="list">snowpeas</a></li>
+    <li><a href="#spinach" class="list">spinach</a></li>
+    <li><a href="#tofu" class="list">tofu</a></li>
+    <li><a href="#tomato" class="list">tomato</a></li>
+    <li><a href="#veg" class="list">vegetables</a></li>
+    <li><a href="#wintermelon" class="list">winter melon</a></li>
+  </ul> 
+  <div class="toolbar"><a class="button back">Back</a></div>
+</div>
+
+<div id="meatandseafood">
+	<div class="toolbar"><h1>meat, seafood</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">
+    <li><a href="#beef" class="list">beef</a></li>
+    <li><a href="#chicken" class="list">chicken</a></li>
+    <li><a href="#chickenegg" class="list">chicken egg</a></li>
+    <li><a href="#clams" class="list">clams</a></li>
+    <li><a href="#crab" class="list">crab</a></li>
+    <li><a href="#duck" class="list">duck</a></li>
+    <li><a href="#egg" class="list">egg</a></li>
+    <li><a href="#fish" class="list">fish</a></li>
+    <li><a href="#jellyfish" class="list">jellyfish</a></li>
+    <li><a href="#lobster" class="list">lobster</a></li>
+    <li><a href="#meat" class="list">meat</a></li>
+    <li><a href="#octopus" class="list">octopus</a></li>
+    <li><a href="#oyster" class="list">oyster</a></li>
+    <li><a href="#pork" class="list">pork</a></li>
+    <li><a href="#scallops" class="list">scallops</a></li>
+    <li><a href="#shrimp" class="list">shrimp</a></li>
+    <li><a href="#squid" class="list">squid</a></li>
+  </ul> 
+  <div class="toolbar"><a class="button back">Back</a></div>
+</div>
+
+<div id="dimsum">
+	<div class="toolbar"><h1>dim sum, dumplings</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">
+    <li><a href="#bbqporkbuns" class="list">bbq pork buns</a></li>
+    <li><a href="#buns" class="list">buns</a></li>
+    <li><a href="#dumplings" class="list">dumplings</a></li>
+    <li><a href="#eggcustard" class="list">egg custard tart</a></li>
+    <li><a href="#eggrolls" class="list">egg rolls</a></li>
+    <li><a href="#porkdumplings" class="list">pork dumplings</a></li>
+    <li><a href="#potstickers" class="list">pot stickers</a></li>
+    <li><a href="#ricenoodlerolls" class="list">rice noodle rolls</a></li>
+    <li><a href="#sesameballs" class="list">sesame balls</a></li>
+    <li><a href="#shrimpdumplings" class="list">shrimp dumplings</a></li>
+    <li><a href="#soupdumplings" class="list">soup dumplings</a></li>
+    <li><a href="#steamedmeatballs" class="list">steamed meatballs</a></li>
+    <li><a href="#stickyricechicken" class="list">sticky rice with chicken</a></li>
+    <li><a href="#tarodumplings" class="list">taro dumplings</a></li>
+    <li><a href="#turnipcake" class="list">turnip cake</a></li>
+    <li><a href="#waterchestnutcake" class="list">water chestnut cake</a></li>
+    <li><a href="#wontons" class="list">wontons (pork dumplings)</a></li>
+  </ul> 
+  <div class="toolbar"><a class="button back">Back</a></div>
+</div>
+
+<div id="fruit">
+	<div class="toolbar"><h1>fruit</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">
+    <li><a href="#apple" class="list">apple</a></li>
+    <li><a href="#banana" class="list">banana</a></li>
+    <li><a href="#cherry" class="list">cherry</a></li>
+    <li><a href="#coconut" class="list">coconut</a></li>
+    <li><a href="#freshfruit" class="list">fruit (fresh)</a></li>
+    <li><a href="#grapes" class="list">grapes</a></li>
+    <li><a href="#honeydew" class="list">honeydew</a></li>
+    <li><a href="#kiwi" class="list">kiwi</a></li>
+    <li><a href="#kumquat" class="list">kumquat</a></li>
+    <li><a href="#lemon" class="list">lemon</a></li>
+    <li><a href="#lime" class="list">lime</a></li>
+    <li><a href="#longan" class="list">longan</a></li>
+    <li><a href="#lychee" class="list">lychee</a></li>
+    <li><a href="#mango" class="list">mango</a></li>
+    <li><a href="#orange" class="list">orange</a></li>
+    <li><a href="#papaya" class="list">papaya</a></li>
+    <li><a href="#peach" class="list">peach</a></li>
+    <li><a href="#pear" class="list">pear</a></li>
+    <li><a href="#persimmon" class="list">persimmon</a></li>
+    <li><a href="#plum" class="list">plum</a></li>
+    <li><a href="#strawberry" class="list">strawberry</a></li>
+    <li><a href="#tangerine" class="list">tangerine</a></li>
+    <li><a href="#watermelon" class="list">watermelon</a></li>
+  </ul> 
+  <div class="toolbar"><a class="button back">Back</a></div>
+</div>
+
+<div id="beverages">
+	<div class="toolbar"><h1>beverages</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">
+  	<li><a href="#beer" class="list">beer</a></li>
+    <li><a href="#coffee" class="list">coffee</a></li>
+    <li><a href="#fruitjuice" class="list">fruit juice</a></li>
+    <li><a href="#milk" class="list">milk</a></li>
+  	<li><a href="#orangejuice" class="list">orange juice</a></li>
+    <li><a href="#soda" class="list">soda</a></li>
+    <li><a href="#soymilk" class="list">soy milk</a></li>
+  	<li><a href="#tea" class="list">tea</a></li>
+    <li><a href="#water" class="list">water</a></li>
+    <li><a href="#redwine" class="list">wine (red)</a></li>
+    <!--<li><a href="#whitewine" class="list">wine (white)</a></li>-->
+  </ul> 
+  <div class="toolbar"><a class="button back">Back</a></div>
+</div>
+
+<div id="condiments">
+	<div class="toolbar"><h1>seasonings, spices</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">  	
+    <li><a href="#ginger" class="list">ginger</a></li>
+    <li><a href="#honey" class="list">honey</a></li>
+    <li><a href="#hotsauce" class="list">hot sauce</a></li>
+    <li><a href="#oystersauce" class="list">oyster sauce</a></li>
+    <li><a href="#blackpepper" class="list">pepper (black)</a></li>
+    <li><a href="#salt" class="list">salt</a></li>
+    <li><a href="#sesameoil" class="list">sesame oil</a></li>
+    <li><a href="#soysauce" class="list">soy sauce</a></li>
+    <li><a href="#sugar" class="list">sugar</a></li>
+    <li><a href="#vinegar" class="list">vinegar</a></li>
+  </ul> 
+  <div class="toolbar"><a class="button back">Back</a></div>
+</div>
+
+<div id="useful">
+	<div class="toolbar"><h1>useful words</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">
+  	<li><a href="#baked" class="list">baked</a></li>
+    <li><a href="#boiled" class="list">boiled</a></li>
+    <li><a href="#deepfried" class="list">deep fried</a></li>
+    <li><a href="#steamed" class="list">steamed</a></li>
+    <li><a href="#stirfried" class="list">stir fried</a></li>
+  </ul> 
+</div>
+
+<!-- // Grains -->
+<div id="bread" class="grain">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a id="swipeme" href="#friedbreadsticks" class="fade"><img src="images/review/bread.jpg" alt="bread" /></a></div>
+</div>
+
+<div id="friedbreadsticks" class="grain">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a id="swipeme" href="#riceporridge" class="fade"><img src="images/review/friedbread.jpg" alt="friedbreadsticks" /></a></div>
+</div>
+
+<div id="riceporridge" class="grain">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a id="swipeme" href="#rice" class="fade"><img src="images/review/riceporridge.jpg" alt="riceporridge" /></a></div>
+</div>
+
+<div id="rice" class="grain">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#friedrice" class="fade"><img src="images/review/rice.jpg" alt="rice" /></a></div>
+</div>
+
+<div id="friedrice" class="grain">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#noodles" class="fade"><img src="images/review/friedrice.jpg" alt="fried rice" /></a></div>
+</div>
+
+<div id="noodles" class="grain">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#friednoodles" class="fade"><img src="images/review/noodles.jpg" alt="noodles" /></a></div>
+</div>
+
+<div id="friednoodles" class="grain">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#steamedbuns" class="fade"><img src="images/review/friednoodles.jpg" alt="fried noodles" /></a></div>
+</div>
+
+<div id="steamedbuns" class="grain">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#bread" class="fade"><img src="images/review/steamedbuns.jpg" alt="steamedbuns" /></a></div>
+</div>
+
+<!-- // Vegetables -->
+
+<div id="asparagus" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#bamboo" class="fade"><img src="images/review/asparagus.jpg" alt="asparagus" /></a></div>
+</div>
+
+<div id="bamboo" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#bellpepper" class="fade"><img src="images/review/bambooshoots.jpg" alt="bambooshoots" /></a></div>
+</div>
+
+<div id="bellpepper" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#bittermelon" class="fade"><img src="images/review/bellpepper.jpg" alt="bellpepper" /></a></div>
+</div>
+
+<div id="bittermelon" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#bokchoy" class="fade"><img src="images/review/bittermelon.jpg" alt="bittermelon" /></a></div>
+</div>
+
+<div id="bokchoy" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#broccoli" class="fade"><img src="images/review/bokchoy.jpg" alt="bokchoy" /></a></div>
+</div>
+
+<div id="broccoli" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#cabbage" class="fade"><img src="images/review/chinesebroccoli.jpg" alt="broccoli" /></a></div>
+</div>
+
+<div id="cabbage" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#carrot" class="fade"><img src="images/review/napacabbage.jpg" alt="cabbage" /></a></div>
+</div>
+
+
+<div id="carrot" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#cauliflower" class="fade"><img src="images/review/carrot.jpg" alt="carrot" /></a></div>
+</div>
+
+<div id="cauliflower" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#celery" class="fade"><img src="images/review/cauliflower.jpg" alt="cauliflower" /></a></div>
+</div>
+
+<div id="celery" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#corn" class="fade"><img src="images/review/celery.jpg" alt="celery" /></a></div>
+</div>
+
+<div id="corn" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#cucumber" class="fade"><img src="images/review/corn.jpg" alt="corn" /></a></div>
+</div>
+
+<div id="cucumber" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#eggplant" class="fade"><img src="images/review/cucumber.jpg" alt="cucumber" /></a></div>
+</div>
+
+<div id="eggplant" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#garlic" class="fade"><img src="images/review/eggplant.jpg" alt="eggplant" /></a></div>
+</div>
+
+<div id="garlic" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#lettuce" class="fade"><img src="images/review/garlic.jpg" alt="garlic" /></a></div>
+</div>
+
+<div id="lettuce" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#shitake" class="fade"><img src="images/review/lettuce.jpg" alt="lettuce" /></a></div>
+</div>
+
+<div id="shitake" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#onion" class="fade"><img src="images/review/shitake.jpg" alt="shitake" /></a></div>
+</div>
+
+<div id="onion" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#scallions" class="fade"><img src="images/review/onion.jpg" alt="onion" /></a></div>
+  <div class="pronounciation">yáng cōng</div>
+  <div class="english">onion</div>
+</div>
+
+<div id="scallions" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#snowpeas" class="fade"><img src="images/review/scallions.jpg" alt="scallion" /></a></div>
+  <div class="pronounciation">cōng</div>
+  <div class="english">scallions</div>
+</div>
+
+<div id="snowpeas" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#spinach" class="fade"><img src="images/review/snowpeas.jpg" alt="snowpeas" /></a></div>
+</div>
+
+<div id="spinach" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#beansprouts" class="fade"><img src="images/review/spinach.jpg" alt="spinach" /></a></div>
+</div>
+
+<div id="beansprouts" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#wintermelon" class="fade"><img src="images/review/beansprouts.jpg" alt="beansprouts" /></a></div>
+</div>
+
+<div id="wintermelon" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#tomato" class="fade"><img src="images/review/wintermelon.jpg" alt="wintermelon" /></a></div>
+</div>
+
+<div id="tomato" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#veg" class="fade"><img src="images/review/tomato.jpg" alt="tomato" /></a></div>
+</div>
+
+<div id="veg" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#tofu" class="fade"><img src="images/review/vegetables.jpg" alt="vegetables" /></a></div>
+</div>
+
+<div id="tofu" class="vegetable">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#asparagus" class="fade"><img src="images/review/tofu.jpg" alt="tofu" /></a></div>
+</div>
+
+<!-- Meat and Seafood Section -->
+
+<div id="beef" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#chicken" class="fade"><img src="images/review/beef.jpg" alt="beef" /></a></div>
+</div>
+
+<div id="chicken" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#chickenegg" class="fade"><img src="images/review/chicken.jpg" alt="chicken" /></a></div>
+</div>
+
+<div id="chickenegg" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#clams" class="fade"><img src="images/review/chickenegg.jpg" alt="chickenegg" /></a></div>
+</div>
+
+<div id="clams" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#crab" class="fade"><img src="images/review/clams.jpg" alt="clams" /></a></div>
+</div>
+
+<div id="crab" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#duck" class="fade"><img src="images/review/crab.jpg" alt="crab" /></a></div>
+</div>
+
+<div id="duck" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#egg" class="fade"><img src="images/review/duck.jpg" alt="duck" /></a></div>
+</div>
+
+<div id="egg" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#fish" class="fade"><img src="images/review/egg.jpg" alt="egg" /></a></div>
+</div>
+
+<div id="fish" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#jellyfish" class="fade"><img src="images/review/fish.jpg" alt="fish" /></a></div>
+</div>
+
+<div id="jellyfish" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#lobster" class="fade"><img src="images/review/jellyfish.jpg" alt="jellyfish" /></a></div>
+</div>
+
+<div id="lobster" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#meat" class="fade"><img src="images/review/lobster.jpg" alt="lobster" /></a></div>
+</div>
+
+<div id="meat" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#octopus" class="fade"><img src="images/review/meat.jpg" alt="meat" /></a></div>
+</div>
+
+<div id="octopus" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#oyster" class="fade"><img src="images/review/octopus.jpg" alt="octopus" /></a></div>
+</div>
+
+<div id="oyster" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#pork" class="fade"><img src="images/review/oyster.jpg" alt="oyster" /></a></div>
+</div>
+
+<div id="pork" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#scallops" class="fade"><img src="images/review/pork.jpg" alt="pork" /></a></div>
+</div>
+
+<div id="scallops" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#shrimp" class="fade"><img src="images/review/scallops.jpg" alt="scallops" /></a></div>
+</div>
+
+<div id="shrimp" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#squid" class="fade"><img src="images/review/shrimp.jpg" alt="shrimp" /></a></div>
+</div>
+
+<div id="squid" class="meatandseafood">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#beef" class="fade"><img src="images/review/squid.jpg" alt="squid" /></a></div>
+</div>
+
+<!-- // Dim Sum Section -->
+
+<div id="bbqporkbuns" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#buns" class="fade"><img src="images/review/bbqporkbuns.jpg" alt="bbqporkbuns" /></a></div>
+</div>
+
+<div id="buns" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#dumplings" class="fade"><img src="images/review/buns.jpg" alt="buns" /></a></div>
+</div>
+
+<div id="dumplings" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#eggcustard" class="fade"><img src="images/review/dumplings.jpg" alt="dumplings" /></a></div>
+</div>
+
+<div id="eggcustard" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#eggrolls" class="fade"><img src="images/review/eggcustard.jpg" alt="eggcustard" /></a></div>
+</div>
+
+<div id="eggrolls" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#porkdumplings" class="fade"><img src="images/review/eggrolls.jpg" alt="eggrolls" /></a></div>
+</div>
+
+<div id="porkdumplings" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#potstickers" class="fade"><img src="images/review/porkdumplings.jpg" alt="porkdumplings" /></a></div>
+</div>
+
+<div id="potstickers" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#ricenoodlerolls" class="fade"><img src="images/review/potstickers.jpg" alt="potstickers" /></a></div>
+</div>
+
+<div id="ricenoodlerolls" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#sesameballs" class="fade"><img src="images/review/ricenoodlerolls.jpg" alt="ricenoodlerolls" /></a></div>
+</div>
+
+<div id="sesameballs" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#shrimpdumplings" class="fade"><img src="images/review/sesameballs.jpg" alt="sesameballs" /></a></div>
+</div>
+
+<div id="shrimpdumplings" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#soupdumplings" class="fade"><img src="images/review/shrimpdumplings.jpg" alt="shrimpdumplings" /></a></div>
+</div>
+
+<div id="soupdumplings" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#steamedmeatballs" class="fade"><img src="images/review/soupdumplings.jpg" alt="soupdumplings" /></a></div>
+</div>
+
+<div id="steamedmeatballs" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#stickyricechicken" class="fade"><img src="images/review/steamedmeatballs.jpg" alt="steamedmeatballs" /></a></div>
+</div>
+
+<div id="stickyricechicken" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#tarodumplings" class="fade"><img src="images/review/stickyricechicken.jpg" alt="stickyricechicken" /></a></div>
+</div>
+
+<div id="tarodumplings" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#turnipcake" class="fade"><img src="images/review/tarodumplings.jpg" alt="tarodumplings" /></a></div>
+</div>
+
+<div id="turnipcake" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#waterchestnutcake" class="fade"><img src="images/review/turnipcake.jpg" alt="turnipcake" /></a></div>
+</div>
+
+<div id="waterchestnutcake" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#wontons" class="fade"><img src="images/review/waterchestnutcake.jpg" alt="waterchestnutcake" /></a></div>
+</div>
+
+<div id="wontons" class="dimsum">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#bbqporkbuns" class="fade"><img src="images/review/wontons.jpg" alt="wontons" /></a></div>
+</div>
+
+
+<!-- // Fruit Section -->
+
+<div id="apple" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#banana" class="fade"><img src="images/review/apple.jpg" alt="apple" /></a></div>
+</div>
+
+<div id="banana" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#cherry" class="fade"><img src="images/review/banana.jpg" alt="banana" /></a></div>
+</div>
+
+<div id="cherry" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#coconut" class="fade"><img src="images/review/cherry.jpg" alt="cherry" /></a></div>
+</div>
+
+<div id="coconut" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#grapes" class="fade"><img src="images/review/coconut.jpg" alt="coconut" /></a></div>
+</div>
+
+<div id="grapes" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#freshfruit" class="fade"><img src="images/review/grapes.jpg" alt="grape" /></a></div>
+</div>
+
+<div id="freshfruit" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#honeydew" class="fade"><img src="images/review/fruit.jpg" alt="freshfruit" /></a></div>
+</div>
+
+<div id="honeydew" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#kiwi" class="fade"><img src="images/review/honeydew.jpg" alt="honeydew" /></a></div>
+</div>
+
+<div id="kiwi" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#kumquat" class="fade"><img src="images/review/kiwi.jpg" alt="kiwi" /></a></div>
+</div>
+
+<div id="kumquat" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#lemon" class="fade"><img src="images/review/kumquat.jpg" alt="kumquat" /></a></div>
+</div>
+
+<div id="lemon" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#lime" class="fade"><img src="images/review/lemon.jpg" alt="lemon" /></a></div>
+</div>
+
+<div id="lime" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#longan" class="fade"><img src="images/review/lime.jpg" alt="lime" /></a></div>
+</div>
+
+<div id="longan" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#lychee" class="fade"><img src="images/review/longan.jpg" alt="longan" /></a></div>
+</div>
+
+<div id="lychee" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#mango" class="fade"><img src="images/review/lychee.jpg" alt="lychee" /></a></div>
+</div>
+
+<div id="mango" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#orange" class="fade"><img src="images/review/mango.jpg" alt="mango" /></a></div>
+</div>
+
+<div id="orange" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#papaya" class="fade"><img src="images/review/orange.jpg" alt="orange" /></a></div>
+</div>
+
+<div id="papaya" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#peach" class="fade"><img src="images/review/papaya.jpg" alt="papaya" /></a></div>
+</div>
+
+<div id="peach" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#pear" class="fade"><img src="images/review/peach.jpg" alt="peach" /></a></div>
+</div>
+
+<div id="pear" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#persimmon" class="fade"><img src="images/review/pear.jpg" alt="pear" /></a></div>
+</div>
+
+<div id="persimmon" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#plum" class="fade"><img src="images/review/persimmon.jpg" alt="persimmon" /></a></div>
+</div>
+
+<div id="plum" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#strawberry" class="fade"><img src="images/review/plum.jpg" alt="plum" /></a></div>
+</div>
+
+<div id="strawberry" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#tangerine" class="fade"><img src="images/review/strawberry.jpg" alt="strawberry" /></a></div>
+</div>
+
+<div id="tangerine" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#watermelon" class="fade"><img src="images/review/tangerine.jpg" alt="tangerine" /></a></div>
+</div>
+
+<div id="watermelon" class="fruit">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#apple" class="fade"><img src="images/review/watermelon.jpg" alt="watermelon" /></a></div>
+</div>
+
+<!-- // Beverages Section -->
+<div id="beer" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#coffee" class="fade"><img src="images/review/beer.jpg" alt="beer" /></a></div>
+</div>
+
+<div id="coffee" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#fruitjuice" class="fade"><img src="images/review/coffee.jpg" alt="coffee" /></a></div>
+</div>
+
+<div id="fruitjuice" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#milk" class="fade"><img src="images/review/fruitjuice.jpg" alt="fruitjuice" /></a></div>
+</div>
+
+<div id="milk" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#orangejuice" class="fade"><img src="images/review/milk.jpg" alt="milk" /></a></div>
+</div>
+
+<div id="orangejuice" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#soda" class="fade"><img src="images/review/orangejuice.jpg" alt="orangejuice" /></a></div>
+</div>
+
+<div id="soda" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#soymilk" class="fade"><img src="images/review/soda.jpg" alt="soda" /></a></div>
+</div>
+
+<div id="soymilk" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#tea" class="fade"><img src="images/review/soymilk.jpg" alt="soymilk" /></a></div>
+</div>
+
+<div id="tea" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#water" class="fade "><img src="images/review/tea.jpg" alt="tea" /></a></div>
+</div>
+
+<div id="water" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#redwine" class="fade "><img src="images/review/water.jpg" alt="water" /></a></div>
+</div>
+
+<div id="redwine" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#beer" class="fade "><img src="images/review/redwine.jpg" alt="redwine" /></a></div>
+</div>
+
+<!--
+<div id="whitewine" class="beverages">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#beer" class="fade "><img src="images/review/whitewine.jpg" alt="whitewine" /></a></div>
+</div>
+-->
+
+<!-- // Condiments -->
+<div id="ginger" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#honey" class="fade"><img src="images/review/ginger.jpg" alt="ginger" /></a></div>
+</div>
+
+<div id="honey" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#hotsauce" class="fade"><img src="images/review/honey.jpg" alt="honey" /></a></div>
+</div>
+
+<div id="hotsauce" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#oystersauce" class="fade"><img src="images/review/hotsauce.jpg" alt="hotsauce" /></a></div>
+</div>
+
+<div id="oystersauce" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#blackpepper" class="fade"><img src="images/review/oystersauce.jpg" alt="oystersauce" /></a></div>
+</div>
+
+<div id="blackpepper" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#salt" class="fade"><img src="images/review/blackpepper.jpg" alt="blackpepper" /></a></div>
+</div>
+
+<div id="salt" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#sesameoil" class="fade"><img src="images/review/salt.jpg" alt="salt" /></a></div>
+  <div class="pronounciation">yán​</div>
+  <div class="english">salt</div>
+</div>
+
+<div id="sesameoil" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#soysauce" class="fade"><img src="images/review/sesameoil.jpg" alt="sesameoil" /></a></div>
+</div>
+
+<div id="soysauce" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#sugar" class="fade"><img src="images/review/soysauce.jpg" alt="soysauce" /></a></div>
+</div>
+
+<div id="sugar" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#vinegar" class="fade"><img src="images/review/sugar.jpg" alt="sugar" /></a></div>
+</div>
+
+<div id="vinegar" class="condiments">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#ginger" class="fade"><img src="images/review/vinegar.jpg" alt="vinegar" /></a></div>
+</div>
+
+<!-- // Useful -->
+<div id="baked" class="useful">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#boiled" class="fade"><img src="images/review/baked.jpg" alt="baked" /></a></div>
+</div>
+
+<div id="boiled" class="useful">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#deepfried" class="fade"><img src="images/review/boiled.jpg" alt="boiled" /></a></div>
+</div>
+
+<div id="deepfried" class="useful">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#steamed" class="fade"><img src="images/review/deepfried.jpg" alt="deepfried" /></a></div>
+</div>
+
+<div id="steamed" class="useful">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#stirfried" class="fade"><img src="images/review/steamed.jpg" alt="steamed" /></a></div>
+</div>
+
+<div id="stirfried" class="useful">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#baked" class="fade"><img src="images/review/stirfried.jpg" alt="stirfried" /></a></div>
+</div>
+
+ 
+<!-- // Info -->
+<div id="info">
+<div class="toolbar"><a class="button back" href="#home">Back</a> <a href="mailto:may@foodieflashcards.com?Subject=Feedback" target="_blank" class="button">Send Feedback!</a></div>
+  <div id="infocontainer">
+    <p>Created by <strong>May Woo</strong> with jQTouch, Adobe Fireworks, HTML, CSS, Javascript, PhoneGap, the internet, and many cups of tea. Copyright 2010</p>      
+    <h4>Photo Credits</h4>
+    <p>tea by <a href="http://www.flickr.com/photos/yomi955/1521364991/" target="_blank">yomi955</a></p>
+    <p>rice by <a href="http://www.flickr.com/photos/francescanocella/2418292881/" target="_blank">Francesca Nocella</a></p>
+    <p>fried rice by <a href="http://www.flickr.com/photos/sethappleton/3346036452/" target="_blank">The Mooncake Box</a></p>
+    <p>noodles by <a href="http://www.flickr.com/photos/stuart_spivack/480841901/" target="_blank">Stu Spivack</a></p>
+    <p>fried noodles by <a href="http://www.flickr.com/photos/sql_samson/4248750973/" target="_blank">SQL Samson</a></p>
+    <p>bread by <a href="http://www.flickr.com/photos/notahipster/4336955050/" target="_blank">Little Blue Hen</a></p>
+    <p>fried bread sticks by <a href="http://www.flickr.com/photos/stuart_spivack/2202462501/" target="_blank">Stu Spivack</a></p>
+    <p>steamed buns by <a href="http://www.flickr.com/photos/sfllaw/208088129/in/photostream/" target="_blank">sfllaw</a></p>
+    <p>bamboo shoots by <a href="http://www.flickr.com/photos/ykjc9/2767581734/in/set-72157605443754504/" target="_blank">puamelia</a></p>
+    <p>asparagus by <a href="http://www.flickr.com/photos/calliope/6251282/" target="_blank">Muffet</a></p>
+    <p>bell pepper by <a href="http://www.flickr.com/photos/53772260@N00/2913096980/in/photostream/" target="_blank">phigonggoi</a></p>
+    <p>bok choy by <a href="http://www.flickr.com/photos/themarmot/3697978780/" target="_blank">The Marmot</a></p>
+    <p>chinese broccoli by <a href="http://www.flickr.com/photos/fotoosvanrobin/2760648397/in/set-72157605828548969/" target="_blank">FotoosVanRobin</a></p>
+    <p>napa cabbage by <a href="http://www.flickr.com/photos/summertomato/4240857487/" target="_blank">SummerTomato</a></p>
+    <p>carrots by <a href="http://www.flickr.com/photos/sunrise/35819369/" target="_blank">color line</a></p>
+    <p>cauliflower by <a href="http://www.flickr.com/photos/mckaysavage/3986199101/" target="_blank">mckaysavage</a></p>
+    <p>celery by <a href="http://www.flickr.com/photos/fotoosvanrobin/2872270122/" target="_blank">FotoosVanRobin</a></p>
+    <p>tomato by <a href="http://www.flickr.com/photos/calliope/225163695/" target="_blank">Muffet</a></p>
+		<p>corn by <a href="http://www.flickr.com/photos/stevendepolo/3666164527/" target="_blank">stevendepolo</a></p>
+    <p>cucumber by <a href="http://www.flickr.com/photos/37884983@N03/3744275657/" target="_blank">stevendepolo</a></p>
+    <p>eggplant by <a href="http://www.flickr.com/photos/ivanatm/3467146989/" target="_blank">gnomakelabu</a></p>
+    <p>garlic by <a href="http://www.flickr.com/photos/giovannijl-s_photohut/349883289/" target="_blank">Sebastian Mary</a></p>
+    <p>lettuce by <a href="http://www.flickr.com/photos/quinnanya/3661862726/" target="_blank">quinn.anya</a></p>
+    <p>shitake mushrooms by <a href="http://www.flickr.com/photos/kthread/3517651386/" target="_blank">kthread</a></p>
+    <p>onion by <a href="http://www.flickr.com/photos/calliope/104314753/" target="_blank">Muffet</a></p>
+    <p>scallions by <a href="http://www.flickr.com/photos/mapper-montag/1290015195/" target="_blank">mapper-montag's </a></p>
+    <p>snow peas by <a href="http://www.flickr.com/photos/notahipster/4503561937/" target="_blank">Little Blue Hen</a></p>
+    <p>spinach by <a href="http://www.flickr.com/photos/crobj/3184283013/" target="_blank">srqpix</a></p>
+    <p>bean sprouts by <a href="http://www.flickr.com/photos/haynes/4253053211/" target="_blank">Charles Haynes</a></p>
+    <p>winter melon by <a href="http://www.flickr.com/photos/beautifulcataya/2971302955/" target="_blank">beautifulcataya</a></p>
+    <p>vegetables by <a href="http://www.flickr.com/photos/wonderlane/3177093015/" target="_blank">Wonderlane</a></p>
+    <p>tomatoes by <a href="http://www.flickr.com/photos/araswami/1068420494/" target="_blank">Swami Stream</a></p>
+    <p>beef by <a href="http://www.flickr.com/photos/avlxyz/3958690056/" target="_blank">avlxyz</a></p>
+    <p>chicken by <a href="http://www.flickr.com/photos/roland/1796174793/" target="_blank">roland</a></p>
+    <p>chicken eggs by <a href="http://www.flickr.com/photos/wwworks/2623295415/" target="_blank">woodleywonderworks</a></p>
+    <p>clams by <a href="http://www.flickr.com/photos/45688285@N00/485761392/" target="_blank">_e.t</a></p>
+    <p>crab by <a href="http://www.flickr.com/photos/66164549@N00/1410451923/" target="_blank">law_keven</a></p>
+    <p>duck by <a href="http://www.flickr.com/photos/avlxyz/2479285609/" target="_blank">avlxyz</a></p>
+    <p>eggs by <a href="http://www.flickr.com/photos/wwworks/2607036664/" target="_blank">woodleywonderworks</a></p>
+    <p>fish by <a href="http://www.flickr.com/photos/lucyd42/2133987548/" target="_blank">lucyd43</a></p>
+    <p>jellyfish by <a href="http://www.flickr.com/photos/stuart_spivack/2273932779/" target="_blank">Stu Spivack</a></p>
+    <p>meat by <a href="http://www.flickr.com/photos/bobusher/3160216242/" target="_blank">Bob Usher</a></p>
+    <p>octopus by <a href="http://www.flickr.com/photos/craighatfield/3647189361/" target="_blank">Craig Hatfield</a></p>
+    <p>oysters by <a href="http://www.flickr.com/photos/glenmaclarty/441874230/" target="_blank">Allerina &amp; Glen MacLarty</a></p>
+    <p>pork by <a href="http://www.flickr.com/photos/jlastras/4531647956/" target="_blank">jlastras</a></p>
+    <p>scallops by <a href="http://www.flickr.com/photos/swanksalot/96094269/" target="_blank">swanksalot</a></p>
+    <p>shrimp by <a href="http://www.flickr.com/photos/ralphandjenny/3801615987/" target="_blank">ralph and jenny</a></p>
+    <p>squid by <a href="http://www.flickr.com/photos/stuart_spivack/185982548/" target="_blank">Stu Spivack</a></p>
+    <p>tofu by <a href="http://www.flickr.com/photos/lfl/3431805549/" target="_blank">www.bluewaikiki.com</a></p>
+    <p>apples by <a href="http://www.flickr.com/photos/linus_art/4208788717/" target="_blank">linus_art</a></p>
+    <p>banana by <a href="http://www.flickr.com/photos/clairity/143368932/" target="_blank">*clairity*</a></p>
+    <p>cherries by <a href="http://www.flickr.com/photos/cleopold73/2844223829/" target="_blank">Corey Leopold</a></p>
+    <p>coconut by <a href="http://www.flickr.com/photos/bionicteaching/2166640369/" target="_blank">bionicteaching</a></p>
+    <p>grapes by <a href="http://www.flickr.com/photos/max-all/258786732/" target="_blank">le max's</a></p>
+    <p>fruit by <a href="http://www.flickr.com/photos/smudie/15233393/" target="_blank">smudie</a></p>
+    <p>honeydew by <a href="http://www.flickr.com/photos/joyosity/4551010922/" target="_blank">joyosity</a></p>
+    <p>kiwi by <a href="http://www.flickr.com/photos/globetrotter1937/2186754847/" target="_blank">pizzodisevo (first of all, my health)</a></p>
+    <p>kumquats by <a href="http://www.flickr.com/photos/howardoyoung/4362300945/" target="_blank">Howard O. Young</a></p>
+    <p>lemons by <a href="http://www.flickr.com/photos/cruccone/3723384937/" target="_blank">Cruccone</a></p>
+    <p>limes by <a href="http://www.flickr.com/photos/moyermk/4121669294/" target="_blank">moyerphotos</a></p>
+    <p>longan by <a href="http://www.flickr.com/photos/carworld/4101671341/" target="_blank">Auswandern Malaysia</a></p>
+    <p>lychee by <a href="http://www.flickr.com/photos/sugree/3748913144/" target="_blank">sugree</a></p>
+    <p>mango by <a href="http://www.flickr.com/photos/joyosity/3474057847/" target="_blank">joyosity</a></p>
+    <p>oranges by <a href="http://www.flickr.com/photos/maese/1350818203/" target="_blank">maesejose</a></p>
+    <p>papaya by <a href="http://www.flickr.com/photos/geishabot/3450345363/" target="_blank">love♡janine</a></p>
+    <p>peaches by <a href="http://www.flickr.com/photos/37884983@N03/3770586176/" target="_blank">La Grande Farmers' Market </a></p>
+    <p>pears by <a href="http://www.flickr.com/photos/cuttlefish/4063429476/" target="_blank">cuttlefish</a></p>
+    <p>persimmons by <a href="http://www.flickr.com/photos/sondyaustin/3613231732/" target="_blank">Sandy Austin</a></p>
+    <p>plums by <a href="http://www.flickr.com/photos/37884983@N03/3837956343/" target="_blank">La Grande Farmers' Market</a></p>  
+    <p>tangerines by <a href="http://www.flickr.com/photos/fontplaydotcom/2540866495/" target="_blank">fontplaydotcom</a></p>
+    <p>watermelon by <a href="http://www.flickr.com/photos/hober/168648375/" target="_blank">hober</a></p>
+    <p>beer by <a href="http://www.flickr.com/photos/brostad/4502147810/" target="_blank">Bernt Rostad</a></p>
+    <p>coffee by <a href="http://www.flickr.com/photos/deapeajay/3046121538/" target="_blank">DeaPeaJay</a></p>
+    <p>fruit juice by <a href="http://www.flickr.com/photos/realsmiley/3443998545/in/set-72157616805748988/" target="_blank">realSMILEY</a></p>
+    <p>milk by <a href="http://www.flickr.com/photos/redeye-/4389514366/" target="_blank">redeye^</a></p>
+    <p>orange juice by <a href="http://www.flickr.com/photos/stublag/3252826115/" target="_blank">Paul.Carroll</a></p>
+    <p>soda by <a href="http://www.flickr.com/photos/poolie/2474643298/" target="_blank">poolie</a></p>
+    <p>soy milk by <a href="http://www.flickr.com/photos/denisesoong/2123808499/" target="_blank">Denise Soong</a></p>
+    <p>water by <a href="http://www.flickr.com/photos/jenny-pics/3527749814/" target="_blank">jenny downing</a></p>
+    <p>red wine by <a href="http://www.flickr.com/photos/kolleggerium/1422799397/" target="_blank">Andreas Kollegger</a></p>
+    <p>white wine by <a href="http://www.flickr.com/photos/kolleggerium/1423695848/" target="_blank">Andreas Kollegger</a></p>
+    <p>chili / hot sauce by <a href="http://www.flickr.com/photos/stevendepolo/4477334399/" target="_blank">stevendepolo</a></p>
+    <p>ginger by <a href="http://www.flickr.com/photos/fotoosvanrobin/3826326646/" target="_blank">FotoosVanRobin</a></p>
+    <p>honey by <a href="http://www.flickr.com/photos/orcaman/354052284/" target="_blank">Or Hiltch</a></p>
+    <p>oyster sauce by <a href="http://www.flickr.com/photos/fotoosvanrobin/3958125581/" target="_blank">FotoosVanRobin</a></p>
+    <p>black pepper by <a href="http://www.flickr.com/photos/brandi666/2237460143/" target="_blank">brandi666</a></p>
+    <p>salt by <a href="http://www.flickr.com/photos/candiedwomanire/889837/" target="_blank">candiedwomanire</a></p>
+    <p>sesame oil by <a href="http://www.flickr.com/photos/avlxyz/4119027683/" target="_blank">avlxyz</a></p>
+    <p>soy sauce by <a href="http://www.flickr.com/photos/merelymel/2722627379/" target="_blank">Merelymel13</a></p>
+    <p>sugar by <a href="http://www.flickr.com/photos/uwehermann/132244825/" target="_blank">Uwe Hermann</a></p>
+    <p>vinegar by <a href="http://www.flickr.com/photos/avlxyz/4253116606/" target="_blank">avlxyz</a></p>
+    <p>baked by <a href="http://www.flickr.com/photos/avlxyz/2476074242/" target="_blank">avlxyz</a></p>
+    <p>boiled by <a href="http://www.flickr.com/photos/comedynose/4065578594/in/photostream/" target="_blank">comedynose</a></p>
+    <p>deep fried by <a href="http://www.flickr.com/photos/nukeit1/66530600/" target="_blank">nukeit1</a></p>
+    <p>steamed by <a href="http://www.flickr.com/photos/eugeneyong/96208637/" target="_blank">eugeneyong</a></p>
+    <p>stir fried by <a href="http://www.flickr.com/photos/matt512/2895791494/" target="_blank">matt512</a></p> 
+    <p>bbq pork buns by <a href="http://www.flickr.com/photos/avlxyz/3335173476/" target="_blank">avlxyz</a></p>
+    <p>buns by <a href="http://www.flickr.com/photos/denniswong/2769874891/" target="_blank">Dennis Wong</a></p>
+    <p>dumplings by <a href="http://www.flickr.com/photos/avlxyz/2408959443/" target="_blank">avlxyz</a></p>
+    <p>pork dumplings by <a href="http://www.flickr.com/photos/avlxyz/4031220669/" target="_blank">avlxyz</a></p>
+    <p>shrimp dumplings by <a href="http://www.flickr.com/photos/sfllaw/245032119/" target="_blank">Simon Law</a></p>
+    <p>rice noodle rolls by <a href="http://www.flickr.com/photos/avlxyz/3155759730/" target="_blank">avlxyz</a></p>
+    <p>eggrolls by <a href="http://www.flickr.com/photos/adactio/192069850/" target="_blank">adactio</a></p>
+    <p>egg custard tart by <a href="http://www.flickr.com/photos/avlxyz/3155759282/" target="_blank">avlxyz</a></p>
+    <p>sesame balls by <a href="http://www.flickr.com/photos/haynes/1106831278/" target="_blank">Charles Haynes</a></p>
+    <p>taro dumpling by <a href="http://www.flickr.com/photos/relgar/4491675701/" target="_blank">Andrew Fung</a></p>
+    <p>lotus wrapped sticky rice by <a href="http://www.flickr.com/photos/mesohungry/4514129947/" target="_blank">Jason Lam</a></p>
+    <p>turnip cake by <a href="http://www.flickr.com/photos/joyosity/3227181636/" target="_blank">Joy</a></p>
+    <p>water chestnut cake by <a href="http://www.flickr.com/photos/tissue_fleur/456008281/" target="_blank">tissue_fleur</a></p>
+    <p>steamed meatballs by <a href="http://www.flickr.com/photos/accidentalhedonist/4557863846/" target="_blank">Kate Hopkins</a></p>
+    <p>potstickers by <a href="http://www.flickr.com/photos/azadam/120125290/" target="_blank">azadam</a></p>
+ 
+    <h4>Illustration Credits</h4>
+    <p>Icon illustration by <a href="http://dezignus.com/">Artonian</a></p>
+  </div>
+  <div class="toolbar"><a class="button back" href="#home">Back</a> <a href="mailto:may@foodieflashcards.com?Subject=Feedback" target="_blank" class="button">Send Feedback!</a></div>
+</div>
+</body>
+</html>

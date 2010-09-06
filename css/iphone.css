@@ -1,0 +1,283 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font-family: Helvetica;
+	color:black;
+	-webkit-text-size-adjust:none;
+}
+#home {
+	 background: #678F1C url(../images/bg_home.jpg) no-repeat;
+	 height:460px;
+}
+#home .review {
+padding-top:250px;
+}
+#home .info {
+padding-top:14px;
+}
+
+ul.edgetoedge {
+	background-color: white;
+	margin: 0;
+	padding: 0;
+}
+
+ul.edgetoedge li {
+	list-style-type: none;
+	border-bottom-width:1px;
+	border-bottom-color:#eee;
+	border-bottom-style:solid;
+	font-size:110%;
+	font-weight: bold;
+	padding: 0px 10px 0px 15px;
+	height:51px;
+	line-height:51px;
+}
+
+#review ul.edgetoedge li {
+	list-style-type: none;
+	border-bottom-width:1px;
+	border-bottom-color:#eee;
+	border-bottom-style:solid;
+	font-size:110%;
+	font-weight: bold;
+	padding: 0px 10px 0px 15px;
+	height:53px;
+	line-height:53px;
+}
+
+ul.edgetoedge li:first-child {
+	border-top:0;
+}
+
+ul.edgetoedge li img.list-icon {
+	width: 45px;
+	vertical-align: middle;
+	padding-right: 8px;
+}
+
+#grains ul.edgetoedge li,
+#vegetables ul.edgetoedge li,
+#meat ul.edgetoedge li,
+#dimsum ul.edgetoedge li
+#fruit ul.edgetoedge li,
+#beverages ul.edgetoedge li,
+#spices ul.edgetoedge li,
+#useful ul.edgetoedge li{
+	height:45px;
+	line-height:45px;
+}
+
+ul.edgetoedge li img {
+	padding-bottom:5px;
+}
+
+a.list {		
+		display: block;  
+		text-decoration: none;
+		color: black;
+    margin-right:5px;
+    background-image: url(../images/chevron.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+a img {
+	border:none;
+	}
+	
+.trans >h2{
+	font-size:20px;
+	font-weight:bold;
+	text-align:center;
+	
+}	
+.toolbar {
+    -webkit-box-sizing: border-box;
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    height: 45px;
+    /*background: url(../images/bg-toolbar.png) #000 repeat-x;*/
+		background:#000;
+    position: relative;
+		background-position:bottom
+}
+	
+.toolbar > h1 {
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    top: 10px;
+    line-height: 1em;
+    margin: 1px 0 0 -75px;
+    height: 40px;
+    font-size: 20px;
+    width: 150px;
+    font-weight: bold;
+    text-shadow: rgba(0,0,0,1) 0 -1px 1px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.toolbar p {
+	color:#333;
+	font-style:italic;
+	padding-top:3px;
+}
+
+.button, .back, .cancel, .add {
+    position: absolute;
+    overflow: hidden;
+    top: 6px;
+    right: 10px;
+    margin: 0;
+    border-width: 0 5px;
+    padding: 0 3px;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    white-space: nowrap;
+    background: none;
+    -webkit-border-image: url(../images/button.png) 0 5 0 5;
+}
+.back {
+    left: 6px;
+    right: auto;
+    padding: 0;
+    max-width: 55px;
+    border-width: 0 8px 0 14px;
+    -webkit-border-image: url(../images/back_button.png) 0 8 0 14;
+}
+.back.active {
+    -webkit-border-image: url(../images/back_button_clicked.png) 0 8 0 14;
+    /*color: #aaa;*/
+}
+
+#progress {
+    -webkit-border-radius: 10px;
+    background-color: rgba(0,0,0,.7);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 80px;
+    left: 60px;
+    line-height: 80px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    top: 120px;
+    width: 200px;
+}
+
+.hidden {
+	display:none;
+	}
+
+.footer {
+	background: #678F1C;
+}
+
+/* Cards Styles 
+------------------------------------*/
+.ireland,
+.grain, 
+.vegetable, 
+.meatandseafood, 
+.dimsum
+.fruit,
+.beverages,
+.condiments,
+.useful {
+	text-align:center;
+	background:#E3E3DC;
+}
+
+.character {
+	padding-top:100px;
+}
+
+.pronounciation {
+	font-size:180%;
+	font-weight:bold;
+	margin: 2px 0 10px 0;
+	font-family:"Times New Roman", Times, serif;
+}
+
+.english {
+	font-size:130%;
+	font-family:"Times New Roman", Times, serif;
+}
+
+#info {
+	background: url(../images/bg_info.jpg) repeat-y;
+}
+ 
+#infocontainer {
+	padding: 15px;
+	color:#fff;
+}
+
+#infocontainer a {
+	color:#fc3;
+}
+
+#infocontainer h4 {
+	margin-top:15px;
+}
+
+/* Test Yourself Styles
+------------------------------------*/
+#testyourself {
+	height: 480px;
+	width: 320px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-perspective: 600;
+}
+
+.card {
+	position: absolute;
+	height: 415px;
+	width: 320px;
+	left: 0px;
+	top: 45px;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 1s;
+}
+
+.card.flipped {
+	-webkit-transform: rotateY(180deg);
+	display: block;
+}
+
+.face {
+	background-color: #E3E3DC;	
+	position: absolute;
+	height: 415px;
+	width: 320px;
+  -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+	-webkit-backface-visibility: hidden;
+}
+
+.frontside  p{
+	color:#bbb;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:20px;
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+
+.backside {
+	-webkit-transform: rotateY(180deg);
+}
