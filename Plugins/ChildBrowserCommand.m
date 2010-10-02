@@ -97,9 +97,11 @@
 	
 	//view2.Town = @"Limerick";
 	//view2.ArrayLocations=@"53.7,-8.72,'1BALLINLOUGH';53.7,-8.81,'2CORK';53.7,-8.82,'3DUBLIN'";
+	view2.SelectedID=(NSNumber *)[arguments objectAtIndex:6];		//id
 	view2.ArrayLocations=(NSString*) [arguments objectAtIndex:5];
 	view2.Town=(NSString*) [arguments objectAtIndex:3];
 	view2.TownSubtitle=(NSString*) [arguments objectAtIndex:4];
+	
 	
 	PhoneGapViewController* cont = (PhoneGapViewController*)[ super appViewController ];
 	//childBrowser.supportedOrientations = cont.supportedOrientations;
@@ -113,7 +115,7 @@
 	
 	
 	//int recordID=21;
-	view2.SelectedID=222;
+	//view2.SelectedID=222;
 	int recordID=view2.SelectedID;				//Get the ID from the selected MKAnnotation
 	
 	

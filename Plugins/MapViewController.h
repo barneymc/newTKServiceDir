@@ -42,7 +42,7 @@
 	NSString* Town;
 	NSString* TownSubtitle;
 	NSString* AnnID;
-	int	SelectedID;
+	NSNumber	*SelectedID;
 	CLLocationCoordinate2D mycoordinate;
 	id <MapViewControllerDelegate> delegate;
 	
@@ -54,7 +54,7 @@
 @property (retain) NSString* TownSubtitle;
 @property (retain) NSString* AnnID;
 @property (nonatomic) CLLocationCoordinate2D mycoordinate;
-@property (readwrite,assign) int SelectedID;
+@property (nonatomic,retain) NSNumber *SelectedID;
 @property (assign) id<MapViewControllerDelegate> delegate;
 
 

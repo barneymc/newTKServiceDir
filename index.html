@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html manifest="manifest.php">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ChineseFood</title>
+	<meta name="author" content="May Woo" />	
+	<meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon" href="icon.png"/>
+  <link rel="apple-touch-startup-image" href="default.png" /> 
+  <style type="text/css" media="screen">@import "jqtouch/jqtouch.min.css";</style>
+  
+	<style type="text/css" media="screen">@import "css/iphone.css";</style>
+	
+	<!--
+  <script type="text/javascript" src="phonegap.js" charset="utf-8"></script>
+  -->
+  <script src="jqtouch/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+  <!--
+  <script src="scripts/iphone.js" type="application/x-javascript" charset="utf-8"></script>
+  -->
+  <script type="text/javascript" charset="utf-8">
+            var jQT = new $.jQTouch({
+                icon: 'icon.png',
+                addGlossToIcon: true,
+                startupScreen: 'default.png',
+                statusBar: 'black',
+								fullScreen: true,
+								touchSelector: 'a, .touch', 
+								initializeTouch: 'a, .touch, body > * > div a, a.slide',
+								slideSelector: 'body > * > ul li a, a.slide',
+                preloadImages: [
+										'images/default.png',  
+		 								'images/home.jpg',
+										'images/home_review.jpg',
+										'images/home_test.jpg',
+										'images/home_info.jpg',      
+									  'images/back_button.png',
+                    'images/back_button_clicked.png',
+										'images/button.png'                                   
+                    ]										
+            });	
+  </script> 
+</head>
+<body>
+
+<div id="home" class="current">
+  <div class="review"><a href="#review" class="cube"><img src="images/bg_home_review.jpg" width="320" height="70"/></a></div>
+   <div class="test"><a href="#testyourself" onClick="getCard();"  class="cube"><img src="images/bg_home_test.jpg" width="320" height="65"/></a></div>
+  <div class="info"><a href="#info" class="cube"><img src="images/bg_home_info.jpg" width="320" height="48"/></a></div>
+</div>
+
+
+<div id="review">
+
+	<div id="title"><a href="#home" class="cube"><img src="images/header.jpg" alt="chinese foodie flashcards" width="320" height="70" /></a></div> 
+  <ul class="edgetoedge">
+    <li><a href="#ireland" class="list"><img src="images/icon_hotels.jpg" class="list-icon" />
+      Ireland</a></li>
+    <li><a href="#transport" class="list"><img src="images/icon_veg.jpg" class="list-icon" />
+      Transport</a></li>
+  </ul>  
+</div>
+
+
+<div id="ireland">
+	<div class="toolbar"><h1>ireland</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">
+  	<li><a href="#BALLINLOUGH" class="list">BALLINLOUGH</a></li>  	 	
+  	<li><a href="#CORK" class="list">CORK</a></li>
+    <li><a href="#DUBLIN" class="list">DUBLIN</a></li>
+    
+  </ul> 
+</div>
+
+<div id="Denmark">
+	<div class="toolbar"><h1>transport</h1><a class="button back" >Back</a></div>
+  <ul class="edgetoedge">
+  	<li><a href="#BRABAND" class="list">BRABAND</a></li>
+    <li><a href="#COPENHAGEN" class="list">COPENHAGEN</a></li>
+    <li><a href="#ESBJERG" class="list">ESBJERG</a></li>
+  	<li><a href="#HOLSTEBRO" class="list">ODENSE</a></li>
+  	<li><a href="#PADBORG" class="list">SLAGELSE</a></li>
+    <li><a href="#VEJLE" class="list">VEGLE</a></li>
+  </ul> 
+  <div class="toolbar"><a class="button back">Back</a></div>
+</div>
+
+
+<!-- // ireland -->
+<div id="BALLINLOUGH" class="ireland">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a id="swipeme" href="#CORK" class="fade"><img src="images/review/BALLINLOUGH.jpg" alt="BALLINLOUGH" /></a></div>
+   <div class="trans"><h1>Ballinlough</h1></div>
+   <p><a href="tel:00353949640045">+353949640045</a>
+   <p>Kevin Meehan</p>
+   <p>Mon-Fri 08:30-18:00</p>
+   <input type="button" value="Live Map" onclick="gomap();"/>
+</div>
+
+<div id="CORK" class="ireland">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a id="swipeme" href="#DUBLIN" class="fade"><img src="images/review/CORK.jpg" alt="CORK" /></a></div>
+  <div class="trans"><h1>Cork</h1></div>
+</div>
+
+<div id="DUBLIN" class="ireland">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a id="swipeme" href="#LIMERICK" class="fade"><img src="images/review/DUBLIN.jpg" alt="DUBLIN" /></a></div>
+   <div class="trans"><h1>Dublin</h1></div>
+</div>
+
+
+
+<!---------------------------------------------- // transport --------------------------------------------------------------------------->
+
+<div id="train" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#next" class="fade"><img src="images/review/train.jpg" alt="train" /></a></div>
+</div>
+
+<div id="next" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#missedthetrain" class="fade"><img src="images/review/next.jpg" alt="next" /></a></div>
+</div>
+
+<div id="missedthetrain" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#ticket" class="fade"><img src="images/review/missedthetrain.jpg" alt="missedthetrain" /></a></div>
+</div>
+
+<div id="ticket" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#buy" class="fade"><img src="images/review/ticket.jpg" alt="ticket" /></a></div>
+</div>
+
+
+<div id="buy" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#howmuch" class="fade"><img src="images/review/buy.jpg" alt="buy" /></a></div>
+</div>
+
+<div id="howmuch" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#twotickets" class="fade"><img src="images/review/howmuch.jpg" alt="howmuch" /></a></div>
+</div>
+
+<div id="twotickets" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#single" class="fade"><img src="images/review/twotickets.jpg" alt="twotickets" /></a></div>
+</div>
+
+<div id="single" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#return" class="fade"><img src="images/review/single.jpg" alt="single" /></a></div>
+</div>
+
+<div id="return" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#boat" class="fade"><img src="images/review/return.jpg" alt="return" /></a></div>
+</div>
+
+<div id="boat" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#plane" class="fade"><img src="images/review/boat.jpg" alt="boat" /></a></div>
+</div>
+
+<div id="plane" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#departure" class="fade"><img src="images/review/plane.jpg" alt="plane" /></a></div>
+</div>
+
+<div id="departure" class="transport">
+	<div class="toolbar"><a class="button back">Back</a> <a class="button slide" href="#review">Index</a></div>
+  <div class="photo"><a href="#train" class="fade"><img src="images/review/departure.jpg" alt="departure" /></a></div>
+</div>
+
+
+ 
+<!-- // Info -->
+<div id="info">
+<div class="toolbar"><a class="button back" href="#home">Back</a> <a href="mailto:may@foodieflashcards.com?Subject=Feedback" target="_blank" class="button">Send Feedback!</a></div>
+  <div id="infocontainer">
+    <p>Created by <strong>May Woo</strong> with jQTouch, Adobe Fireworks, HTML, CSS, Javascript, PhoneGap, the internet, and many cups of tea. Copyright 2010</p>      
+    <h4>Photo Credits</h4>
+    <p>tea by <a href="http://www.flickr.com/photos/yomi955/1521364991/" target="_blank">yomi955</a></p>
+    <p>rice by <a href="http://www.flickr.com/photos/francescanocella/2418292881/" target="_blank">Francesca Nocella</a></p>
+    <p>fried rice by <a href="http://www.flickr.com/photos/sethappleton/3346036452/" target="_blank">The Mooncake Box</a></p>
+    <p>noodles by <a href="http://www.flickr.com/photos/stuart_spivack/480841901/" target="_blank">Stu Spivack</a></p>
+    <p>fried noodles by <a href="http://www.flickr.com/photos/sql_samson/4248750973/" target="_blank">SQL Samson</a></p>
+    <p>bread by <a href="http://www.flickr.com/photos/notahipster/4336955050/" target="_blank">Little Blue Hen</a></p>
+    <p>fried bread sticks by <a href="http://www.flickr.com/photos/stuart_spivack/2202462501/" target="_blank">Stu Spivack</a></p>
+    <p>steamed buns by <a href="http://www.flickr.com/photos/sfllaw/208088129/in/photostream/" target="_blank">sfllaw</a></p>
+    <p>bamboo shoots by <a href="http://www.flickr.com/photos/ykjc9/2767581734/in/set-72157605443754504/" target="_blank">puamelia</a></p>
+    <p>asparagus by <a href="http://www.flickr.com/photos/calliope/6251282/" target="_blank">Muffet</a></p>
+    <p>bell pepper by <a href="http://www.flickr.com/photos/53772260@N00/2913096980/in/photostream/" target="_blank">phigonggoi</a></p>
+    <p>bok choy by <a href="http://www.flickr.com/photos/themarmot/3697978780/" target="_blank">The Marmot</a></p>
+    <p>chinese broccoli by <a href="http://www.flickr.com/photos/fotoosvanrobin/2760648397/in/set-72157605828548969/" target="_blank">FotoosVanRobin</a></p>
+    <p>napa cabbage by <a href="http://www.flickr.com/photos/summertomato/4240857487/" target="_blank">SummerTomato</a></p>
+    <p>carrots by <a href="http://www.flickr.com/photos/sunrise/35819369/" target="_blank">color line</a></p>
+    <p>cauliflower by <a href="http://www.flickr.com/photos/mckaysavage/3986199101/" target="_blank">mckaysavage</a></p>
+    <p>celery by <a href="http://www.flickr.com/photos/fotoosvanrobin/2872270122/" target="_blank">FotoosVanRobin</a></p>
+    <p>tomato by <a href="http://www.flickr.com/photos/calliope/225163695/" target="_blank">Muffet</a></p>
+		<p>corn by <a href="http://www.flickr.com/photos/stevendepolo/3666164527/" target="_blank">stevendepolo</a></p>
+    <p>cucumber by <a href="http://www.flickr.com/photos/37884983@N03/3744275657/" target="_blank">stevendepolo</a></p>
+    <p>eggplant by <a href="http://www.flickr.com/photos/ivanatm/3467146989/" target="_blank">gnomakelabu</a></p>
+    <p>garlic by <a href="http://www.flickr.com/photos/giovannijl-s_photohut/349883289/" target="_blank">Sebastian Mary</a></p>
+    <p>lettuce by <a href="http://www.flickr.com/photos/quinnanya/3661862726/" target="_blank">quinn.anya</a></p>
+    <p>shitake mushrooms by <a href="http://www.flickr.com/photos/kthread/3517651386/" target="_blank">kthread</a></p>
+    <p>onion by <a href="http://www.flickr.com/photos/calliope/104314753/" target="_blank">Muffet</a></p>
+    <p>scallions by <a href="http://www.flickr.com/photos/mapper-montag/1290015195/" target="_blank">mapper-montag's </a></p>
+    <p>snow peas by <a href="http://www.flickr.com/photos/notahipster/4503561937/" target="_blank">Little Blue Hen</a></p>
+    <p>spinach by <a href="http://www.flickr.com/photos/crobj/3184283013/" target="_blank">srqpix</a></p>
+    <p>bean sprouts by <a href="http://www.flickr.com/photos/haynes/4253053211/" target="_blank">Charles Haynes</a></p>
+    <p>winter melon by <a href="http://www.flickr.com/photos/beautifulcataya/2971302955/" target="_blank">beautifulcataya</a></p>
+    <p>vegetables by <a href="http://www.flickr.com/photos/wonderlane/3177093015/" target="_blank">Wonderlane</a></p>
+    <p>tomatoes by <a href="http://www.flickr.com/photos/araswami/1068420494/" target="_blank">Swami Stream</a></p>
+    <p>beef by <a href="http://www.flickr.com/photos/avlxyz/3958690056/" target="_blank">avlxyz</a></p>
+    <p>chicken by <a href="http://www.flickr.com/photos/roland/1796174793/" target="_blank">roland</a></p>
+    <p>chicken eggs by <a href="http://www.flickr.com/photos/wwworks/2623295415/" target="_blank">woodleywonderworks</a></p>
+    <p>clams by <a href="http://www.flickr.com/photos/45688285@N00/485761392/" target="_blank">_e.t</a></p>
+    <p>crab by <a href="http://www.flickr.com/photos/66164549@N00/1410451923/" target="_blank">law_keven</a></p>
+    <p>duck by <a href="http://www.flickr.com/photos/avlxyz/2479285609/" target="_blank">avlxyz</a></p>
+    <p>eggs by <a href="http://www.flickr.com/photos/wwworks/2607036664/" target="_blank">woodleywonderworks</a></p>
+    <p>fish by <a href="http://www.flickr.com/photos/lucyd42/2133987548/" target="_blank">lucyd43</a></p>
+    <p>jellyfish by <a href="http://www.flickr.com/photos/stuart_spivack/2273932779/" target="_blank">Stu Spivack</a></p>
+    <p>meat by <a href="http://www.flickr.com/photos/bobusher/3160216242/" target="_blank">Bob Usher</a></p>
+    <p>octopus by <a href="http://www.flickr.com/photos/craighatfield/3647189361/" target="_blank">Craig Hatfield</a></p>
+    <p>oysters by <a href="http://www.flickr.com/photos/glenmaclarty/441874230/" target="_blank">Allerina &amp; Glen MacLarty</a></p>
+    <p>pork by <a href="http://www.flickr.com/photos/jlastras/4531647956/" target="_blank">jlastras</a></p>
+    <p>scallops by <a href="http://www.flickr.com/photos/swanksalot/96094269/" target="_blank">swanksalot</a></p>
+    <p>shrimp by <a href="http://www.flickr.com/photos/ralphandjenny/3801615987/" target="_blank">ralph and jenny</a></p>
+    <p>squid by <a href="http://www.flickr.com/photos/stuart_spivack/185982548/" target="_blank">Stu Spivack</a></p>
+    <p>tofu by <a href="http://www.flickr.com/photos/lfl/3431805549/" target="_blank">www.bluewaikiki.com</a></p>
+    <p>apples by <a href="http://www.flickr.com/photos/linus_art/4208788717/" target="_blank">linus_art</a></p>
+    <p>banana by <a href="http://www.flickr.com/photos/clairity/143368932/" target="_blank">*clairity*</a></p>
+    <p>cherries by <a href="http://www.flickr.com/photos/cleopold73/2844223829/" target="_blank">Corey Leopold</a></p>
+    <p>coconut by <a href="http://www.flickr.com/photos/bionicteaching/2166640369/" target="_blank">bionicteaching</a></p>
+    <p>grapes by <a href="http://www.flickr.com/photos/max-all/258786732/" target="_blank">le max's</a></p>
+    <p>fruit by <a href="http://www.flickr.com/photos/smudie/15233393/" target="_blank">smudie</a></p>
+    <p>honeydew by <a href="http://www.flickr.com/photos/joyosity/4551010922/" target="_blank">joyosity</a></p>
+    <p>kiwi by <a href="http://www.flickr.com/photos/globetrotter1937/2186754847/" target="_blank">pizzodisevo (first of all, my health)</a></p>
+    <p>kumquats by <a href="http://www.flickr.com/photos/howardoyoung/4362300945/" target="_blank">Howard O. Young</a></p>
+    <p>lemons by <a href="http://www.flickr.com/photos/cruccone/3723384937/" target="_blank">Cruccone</a></p>
+    <p>limes by <a href="http://www.flickr.com/photos/moyermk/4121669294/" target="_blank">moyerphotos</a></p>
+    <p>longan by <a href="http://www.flickr.com/photos/carworld/4101671341/" target="_blank">Auswandern Malaysia</a></p>
+    <p>lychee by <a href="http://www.flickr.com/photos/sugree/3748913144/" target="_blank">sugree</a></p>
+    <p>mango by <a href="http://www.flickr.com/photos/joyosity/3474057847/" target="_blank">joyosity</a></p>
+    <p>oranges by <a href="http://www.flickr.com/photos/maese/1350818203/" target="_blank">maesejose</a></p>
+    <p>papaya by <a href="http://www.flickr.com/photos/geishabot/3450345363/" target="_blank">love♡janine</a></p>
+    <p>peaches by <a href="http://www.flickr.com/photos/37884983@N03/3770586176/" target="_blank">La Grande Farmers' Market </a></p>
+    <p>pears by <a href="http://www.flickr.com/photos/cuttlefish/4063429476/" target="_blank">cuttlefish</a></p>
+    <p>persimmons by <a href="http://www.flickr.com/photos/sondyaustin/3613231732/" target="_blank">Sandy Austin</a></p>
+    <p>plums by <a href="http://www.flickr.com/photos/37884983@N03/3837956343/" target="_blank">La Grande Farmers' Market</a></p>  
+    <p>tangerines by <a href="http://www.flickr.com/photos/fontplaydotcom/2540866495/" target="_blank">fontplaydotcom</a></p>
+    <p>watermelon by <a href="http://www.flickr.com/photos/hober/168648375/" target="_blank">hober</a></p>
+    <p>beer by <a href="http://www.flickr.com/photos/brostad/4502147810/" target="_blank">Bernt Rostad</a></p>
+    <p>coffee by <a href="http://www.flickr.com/photos/deapeajay/3046121538/" target="_blank">DeaPeaJay</a></p>
+    <p>fruit juice by <a href="http://www.flickr.com/photos/realsmiley/3443998545/in/set-72157616805748988/" target="_blank">realSMILEY</a></p>
+    <p>milk by <a href="http://www.flickr.com/photos/redeye-/4389514366/" target="_blank">redeye^</a></p>
+    <p>orange juice by <a href="http://www.flickr.com/photos/stublag/3252826115/" target="_blank">Paul.Carroll</a></p>
+    <p>soda by <a href="http://www.flickr.com/photos/poolie/2474643298/" target="_blank">poolie</a></p>
+    <p>soy milk by <a href="http://www.flickr.com/photos/denisesoong/2123808499/" target="_blank">Denise Soong</a></p>
+    <p>water by <a href="http://www.flickr.com/photos/jenny-pics/3527749814/" target="_blank">jenny downing</a></p>
+    <p>red wine by <a href="http://www.flickr.com/photos/kolleggerium/1422799397/" target="_blank">Andreas Kollegger</a></p>
+    <p>white wine by <a href="http://www.flickr.com/photos/kolleggerium/1423695848/" target="_blank">Andreas Kollegger</a></p>
+    <p>chili / hot sauce by <a href="http://www.flickr.com/photos/stevendepolo/4477334399/" target="_blank">stevendepolo</a></p>
+    <p>ginger by <a href="http://www.flickr.com/photos/fotoosvanrobin/3826326646/" target="_blank">FotoosVanRobin</a></p>
+    <p>honey by <a href="http://www.flickr.com/photos/orcaman/354052284/" target="_blank">Or Hiltch</a></p>
+    <p>oyster sauce by <a href="http://www.flickr.com/photos/fotoosvanrobin/3958125581/" target="_blank">FotoosVanRobin</a></p>
+    <p>black pepper by <a href="http://www.flickr.com/photos/brandi666/2237460143/" target="_blank">brandi666</a></p>
+    <p>salt by <a href="http://www.flickr.com/photos/candiedwomanire/889837/" target="_blank">candiedwomanire</a></p>
+    <p>sesame oil by <a href="http://www.flickr.com/photos/avlxyz/4119027683/" target="_blank">avlxyz</a></p>
+    <p>soy sauce by <a href="http://www.flickr.com/photos/merelymel/2722627379/" target="_blank">Merelymel13</a></p>
+    <p>sugar by <a href="http://www.flickr.com/photos/uwehermann/132244825/" target="_blank">Uwe Hermann</a></p>
+    <p>vinegar by <a href="http://www.flickr.com/photos/avlxyz/4253116606/" target="_blank">avlxyz</a></p>
+    <p>baked by <a href="http://www.flickr.com/photos/avlxyz/2476074242/" target="_blank">avlxyz</a></p>
+    <p>boiled by <a href="http://www.flickr.com/photos/comedynose/4065578594/in/photostream/" target="_blank">comedynose</a></p>
+    <p>deep fried by <a href="http://www.flickr.com/photos/nukeit1/66530600/" target="_blank">nukeit1</a></p>
+    <p>steamed by <a href="http://www.flickr.com/photos/eugeneyong/96208637/" target="_blank">eugeneyong</a></p>
+    <p>stir fried by <a href="http://www.flickr.com/photos/matt512/2895791494/" target="_blank">matt512</a></p> 
+    <p>bbq pork buns by <a href="http://www.flickr.com/photos/avlxyz/3335173476/" target="_blank">avlxyz</a></p>
+    <p>buns by <a href="http://www.flickr.com/photos/denniswong/2769874891/" target="_blank">Dennis Wong</a></p>
+    <p>dumplings by <a href="http://www.flickr.com/photos/avlxyz/2408959443/" target="_blank">avlxyz</a></p>
+    <p>pork dumplings by <a href="http://www.flickr.com/photos/avlxyz/4031220669/" target="_blank">avlxyz</a></p>
+    <p>shrimp dumplings by <a href="http://www.flickr.com/photos/sfllaw/245032119/" target="_blank">Simon Law</a></p>
+    <p>rice noodle rolls by <a href="http://www.flickr.com/photos/avlxyz/3155759730/" target="_blank">avlxyz</a></p>
+    <p>eggrolls by <a href="http://www.flickr.com/photos/adactio/192069850/" target="_blank">adactio</a></p>
+    <p>egg custard tart by <a href="http://www.flickr.com/photos/avlxyz/3155759282/" target="_blank">avlxyz</a></p>
+    <p>sesame balls by <a href="http://www.flickr.com/photos/haynes/1106831278/" target="_blank">Charles Haynes</a></p>
+    <p>taro dumpling by <a href="http://www.flickr.com/photos/relgar/4491675701/" target="_blank">Andrew Fung</a></p>
+    <p>lotus wrapped sticky rice by <a href="http://www.flickr.com/photos/mesohungry/4514129947/" target="_blank">Jason Lam</a></p>
+    <p>turnip cake by <a href="http://www.flickr.com/photos/joyosity/3227181636/" target="_blank">Joy</a></p>
+    <p>water chestnut cake by <a href="http://www.flickr.com/photos/tissue_fleur/456008281/" target="_blank">tissue_fleur</a></p>
+    <p>steamed meatballs by <a href="http://www.flickr.com/photos/accidentalhedonist/4557863846/" target="_blank">Kate Hopkins</a></p>
+    <p>potstickers by <a href="http://www.flickr.com/photos/azadam/120125290/" target="_blank">azadam</a></p>
+ 
+    <h4>Illustration Credits</h4>
+    <p>Icon illustration by <a href="http://dezignus.com/">Artonian</a></p>
+  </div>
+  <div class="toolbar"><a class="button back" href="#home">Back</a> <a href="mailto:may@foodieflashcards.com?Subject=Feedback" target="_blank" class="button">Send Feedback!</a></div>
+</div>
+</body>
+</html>

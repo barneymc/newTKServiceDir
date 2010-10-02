@@ -207,19 +207,51 @@
 //  return CustannView;
 //}
 											  
+# pragma mark Personalized annotation
+
+- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(AddressAnnotation *) annotation{
+	int postag = 0;
+	
+	MKPinAnnotationView *annView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"];
+	annView.pinColor = MKPinAnnotationColorGreen;
+	UIButton *myDetailButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	myDetailButton.frame = CGRectMake(0, 0, 23, 23);
+	myDetailButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+	myDetailButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+	
+	// Set the image for the button
+	[myDetailButton setImage:[UIImage imageNamed:@"button_right.png"] forState:UIControlStateNormal];
+	[myDetailButton addTarget:self action:@selector(annotationViewClick:) forControlEvents:UIControlEventTouchUpInside]; 
+	
+	if ([[annotation title] isEqualToString:@"Current Location"]) {
+		postag = 99999;
+	} else {
+		postag = [annotation.currentPoint intValue];
+	} 
+	myDetailButton.tag  = postag;
+	
+	
+	// Set the button as the callout view
+	annView.rightCalloutAccessoryView = myDetailButton;
+	
+	annView.animatesDrop=TRUE;
+	annView.canShowCallout = YES;
+	annView.calloutOffset = CGPointMake(-5, 5);
+	return annView;
+}
 
 								 
 //handle the click event for the annotation - setting the javascript								 
 -(IBAction)annotationViewClick:(id) sender{
 	
-	//NSLog(@" sender.UIButton Tag : currentPoint is %d ",[sender tag]);
+	NSLog(@" sender.UIButton Tag : currentPoint is %d ",[sender tag]);
 	int nrButtonPressed=((UIButton *)sender).tag;
 	NSLog([NSString stringWithFormat: @"Button pressed (%d);",nrButtonPressed]);
-	NSLog(@"Clicked - raising protocal to delegate!");
+	NSLog(@"Child Clicked - raising protocal to daddy delegate!");
 	
-	[[self delegate] pinSelected:222];		//child class sends protocol message to the delegate
+	[[self delegate] pinSelected:nrButtonPressed];		//child class sends protocol message to the delegate
 	self.AnnID=@"A";
-	self.SelectedID=213;
+	//self.SelectedID=213;
 	[self dismissModalViewControllerAnimated:YES];	
 								 
 		
@@ -274,6 +306,9 @@
 	addAnnotation = [[AddressAnnotation alloc] initWithCoordinate:location3D];
 	addAnnotation.title=self.Town;
 	addAnnotation.subtitle=self.TownSubtitle;
+	addAnnotation.currentPoint=self.SelectedID;			//self.SelectedID;
+	
+	//NSLog(@"Setting ID as %d@",self.SelectedID);
 	
 	[mapView addAnnotation:addAnnotation];
 	
@@ -315,8 +350,8 @@
 	for (i=0; i< count; i++) {
 		NSLog(@"Element %i = %@",i,[listlocations objectAtIndex:i]);
 		
-		location=[listlocations objectAtIndex:i];				//"53,-8.4"	STRING
-		values=[location componentsSeparatedByString:@","];		//[53,-8.4]	ARRAY
+		location=[listlocations objectAtIndex:i];				//"53,-8.4,'Cork',23"	STRING
+		values=[location componentsSeparatedByString:@","];		//[53,-8.4,'Cork',23]	ARRAY
 		NSLog(@"AllLocationValues is %@",values);
 		NSLog(@" Label cord is %@", [values objectAtIndex:2]);		//CORK label		VALUE IN ARRAY
 		
@@ -324,8 +359,11 @@
 		eventLocation.longitude=[[values objectAtIndex:1] doubleValue];
 		
 		addAnnotationx=[[AddressAnnotation alloc] initWithCoordinate:eventLocation];
-		
-		addAnnotationx.currentPoint=i;
+		//Causing the app to crash
+		//addAnnotationx.currentPoint=[NSNumber numberWithInt:i];
+		addAnnotationx.title=[values objectAtIndex:2];
+		addAnnotationx.subtitle=[values objectAtIndex:2];
+		addAnnotationx.currentPoint=[values objectAtIndex:3];
 		[mapView addAnnotation:addAnnotationx];
 		}
 		
