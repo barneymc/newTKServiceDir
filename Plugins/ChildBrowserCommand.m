@@ -55,11 +55,13 @@
 		
 	//Add the script stuff here......
 	//We define the javascript function first
+	//We pass the id to the ContactDetails method that interrogates the database
 	[webView stringByEvaluatingJavaScriptFromString:@"var script = document.createElement('script');"
 	 "var idString='Thursday';"
 	 "script.type = 'text/javascript';"
 	 "script.text = \"function myFunction(id) { "
-	 "var field = document.getElementById('test').innerHTML=id;"
+	 " var contactname=ContactDetails(id); "
+	 "var field = document.getElementById('test').innerHTML=contactname;"
 	 " jQT.goTo('#Denmark','slide'); "
 	 "field.value='Calling function - OK';"
 	 "}\";"

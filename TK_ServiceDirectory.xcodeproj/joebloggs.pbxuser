@@ -16,19 +16,19 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = 57B3E7FA123573E8000D0C2A /* TK_ServiceDirectory */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* TK_ServiceDirectory */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* TK_ServiceDirectory */,
 		);
 		breakpoints = (
 			57ABAD62123654C400FC486C /* MapViewController.m:333 */,
-			57ABAD75123655CB00FC486C /* ChildBrowserCommand.m:101 */,
-			57CDD6DE1236E9B7009EC542 /* ChildBrowserCommand.m:126 */,
-			57CDD6E21236E9C5009EC542 /* ChildBrowserCommand.m:125 */,
-			57C744E31238F31A003AE204 /* ChildBrowserCommand.m:114 */,
+			57ABAD75123655CB00FC486C /* ChildBrowserCommand.m:103 */,
+			57CDD6DE1236E9B7009EC542 /* ChildBrowserCommand.m:128 */,
+			57CDD6E21236E9C5009EC542 /* ChildBrowserCommand.m:127 */,
+			57C744E31238F31A003AE204 /* ChildBrowserCommand.m:116 */,
 			579CC19A125639D700503C76 /* MapViewController.m:252 */,
-			57A15C6B125742CE009723E3 /* ChildBrowserCommand.m:100 */,
+			57A15C6B125742CE009723E3 /* ChildBrowserCommand.m:102 */,
 			57A15C721257430A009723E3 /* MapViewController.m:309 */,
 		);
 		codeSenseManager = 57B3E81B12357410000D0C2A /* Code sense */;
@@ -65,7 +65,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					720,
+					755,
 					20,
 					48,
 					43,
@@ -82,19 +82,21 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 307699974;
-			PBXWorkspaceStateSaveDate = 307699974;
+			PBXPerProjectTemplateStateSaveDate = 307713118;
+			PBXWorkspaceStateSaveDate = 307713118;
 		};
 		perUserProjectItems = {
-			579CC1691256364F00503C76 /* PBXTextBookmark */ = 579CC1691256364F00503C76 /* PBXTextBookmark */;
 			57A15BB612572328009723E3 /* PBXBookmark */ = 57A15BB612572328009723E3 /* PBXBookmark */;
 			57A15BB712572328009723E3 /* PBXBookmark */ = 57A15BB712572328009723E3 /* PBXBookmark */;
 			57A15C7C12574514009723E3 /* PBXTextBookmark */ = 57A15C7C12574514009723E3 /* PBXTextBookmark */;
 			57A15C831257458F009723E3 /* PBXTextBookmark */ = 57A15C831257458F009723E3 /* PBXTextBookmark */;
-			57A15C94125747D4009723E3 /* PBXTextBookmark */ = 57A15C94125747D4009723E3 /* PBXTextBookmark */;
-			57A15C9C1257485B009723E3 /* PBXTextBookmark */ = 57A15C9C1257485B009723E3 /* PBXTextBookmark */;
-			57A15C9D1257485B009723E3 /* PBXTextBookmark */ = 57A15C9D1257485B009723E3 /* PBXTextBookmark */;
-			57A15CAA12574CC9009723E3 /* PBXTextBookmark */ = 57A15CAA12574CC9009723E3 /* PBXTextBookmark */;
+			57A15D5212575459009723E3 /* PBXTextBookmark */ = 57A15D5212575459009723E3 /* PBXTextBookmark */;
+			57A15D96125756AC009723E3 /* PBXTextBookmark */ = 57A15D96125756AC009723E3 /* PBXTextBookmark */;
+			57A15DB5125759C0009723E3 /* PBXTextBookmark */ = 57A15DB5125759C0009723E3 /* PBXTextBookmark */;
+			57A15DBC12575A3F009723E3 /* PBXTextBookmark */ = 57A15DBC12575A3F009723E3 /* PBXTextBookmark */;
+			57A15E941257750C009723E3 /* PBXTextBookmark */ = 57A15E941257750C009723E3 /* PBXTextBookmark */;
+			57A15E951257750C009723E3 /* PBXTextBookmark */ = 57A15E951257750C009723E3 /* PBXTextBookmark */;
+			57A15F23125779FE009723E3 /* PBXTextBookmark */ = 57A15F23125779FE009723E3 /* PBXTextBookmark */;
 			57C7443F1238E023003AE204 /* PBXTextBookmark */ = 57C7443F1238E023003AE204 /* PBXTextBookmark */;
 			57C744401238E023003AE204 /* PBXTextBookmark */ = 57C744401238E023003AE204 /* PBXTextBookmark */;
 			57CDD6E91236E9CC009EC542 /* PBXTextBookmark */ = 57CDD6E91236E9CC009EC542 /* PBXTextBookmark */;
@@ -110,27 +112,12 @@
 			sepNavVisRange = "{41, 363}";
 		};
 	};
-	579CC1691256364F00503C76 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 57B3E957123584E4000D0C2A /* ChildBrowserViewController.m */;
-		name = "ChildBrowserViewController.m: 42";
-		rLen = 7;
-		rLoc = 977;
-		rType = 0;
-		vrLen = 1123;
-		vrLoc = 2016;
-	};
 	579CC1791256372100503C76 /* MapViewController.h */ = {
 		isa = PBXFileReference;
 		lastKnownFileType = sourcecode.c.h;
 		name = MapViewController.h;
 		path = /PGNew/TK/TK_ServiceDirectory/Plugins/MapViewController.h;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {898, 949}}";
-			sepNavSelRange = "{1361, 0}";
-			sepNavVisRange = "{657, 1016}";
-		};
 	};
 	579CC19A125639D700503C76 /* MapViewController.m:252 */ = {
 		isa = PBXFileBreakpoint;
@@ -156,11 +143,6 @@
 		name = MapViewController.m;
 		path = /PGNew/TK/TK_ServiceDirectory/Plugins/MapViewController.m;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 5850}}";
-			sepNavSelRange = "{718, 0}";
-			sepNavVisRange = "{13531, 620}";
-		};
 	};
 	57A15BB612572328009723E3 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -170,7 +152,7 @@
 		isa = PBXBookmark;
 		fRef = 57A15BB2125722FA009723E3 /* button_right.png */;
 	};
-	57A15C6B125742CE009723E3 /* ChildBrowserCommand.m:100 */ = {
+	57A15C6B125742CE009723E3 /* ChildBrowserCommand.m:102 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -182,9 +164,9 @@
 		functionName = "-showMap:withDict:";
 		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 100;
+		lineNumber = 102;
 		location = TK_ServiceDirectory;
-		modificationTime = 307708737.421799;
+		modificationTime = 307708737.4217989;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -196,13 +178,13 @@
 		continueAfterActions = 0;
 		countType = 0;
 		delayBeforeContinue = 0;
-		fileReference = 579CC1AB12563CF000503C76 /* MapViewController.m */;
+		fileReference = 57A6897512359D2100B08C22 /* MapViewController.m */;
 		functionName = "-showArgsAddress";
 		hitCount = 1;
 		ignoreCount = 0;
 		lineNumber = 309;
 		location = TK_ServiceDirectory;
-		modificationTime = 307708837.175521;
+		modificationTime = 307711743.547323;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -226,45 +208,123 @@
 		vrLen = 557;
 		vrLoc = 0;
 	};
-	57A15C94125747D4009723E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 57B3E955123584E4000D0C2A /* ChildBrowserCommand.m */;
-		name = "ChildBrowserCommand.m: 118";
-		rLen = 0;
-		rLoc = 3923;
-		rType = 0;
-		vrLen = 1432;
-		vrLoc = 2647;
+	57A15D4C12575228009723E3 /* loaddata.js */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {933, 1924}}";
+			sepNavSelRange = "{136, 0}";
+			sepNavVisRange = "{0, 905}";
+		};
 	};
-	57A15C9C1257485B009723E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 57A689EA1235A3AC00B08C22 /* index.html */;
-		name = "index.html: 54";
-		rLen = 0;
-		rLoc = 2259;
-		rType = 0;
-		vrLen = 1309;
-		vrLoc = 1504;
-	};
-	57A15C9D1257485B009723E3 /* PBXTextBookmark */ = {
+	57A15D5212575459009723E3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 579CC1AB12563CF000503C76 /* MapViewController.m */;
-		name = "MapViewController.m: 364";
-		rLen = 0;
-		rLoc = 11468;
-		rType = 0;
-		vrLen = 1505;
-		vrLoc = 9894;
-	};
-	57A15CAA12574CC9009723E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 57A6897512359D2100B08C22 /* MapViewController.m */;
 		name = "MapViewController.m: 365";
 		rLen = 0;
 		rLoc = 11412;
 		rType = 0;
 		vrLen = 1541;
 		vrLoc = 9977;
+	};
+	57A15D96125756AC009723E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 57A15D97125756AC009723E3 /* iphone.js */;
+		name = "iphone.js: 7";
+		rLen = 0;
+		rLoc = 187;
+		rType = 0;
+		vrLen = 187;
+		vrLoc = 0;
+	};
+	57A15D97125756AC009723E3 /* iphone.js */ = {
+		isa = PBXFileReference;
+		name = iphone.js;
+		path = /PGNew/TK/TK_ServiceDirectory/www/scripts/iphone.js;
+		sourceTree = "<absolute>";
+	};
+	57A15D99125756AC009723E3 /* loaddata.js */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.javascript;
+		name = loaddata.js;
+		path = /PGNew/TK/TK_ServiceDirectory/www/loaddata.js;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1678, 1976}}";
+			sepNavSelRange = "{3938, 0}";
+			sepNavVisRange = "{3678, 1333}";
+		};
+	};
+	57A15D9B125756AC009723E3 /* index.html */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.html;
+		name = index.html;
+		path = /PGNew/TK/TK_ServiceDirectory/www/index.html;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1062, 5707}}";
+			sepNavSelRange = "{4956, 0}";
+			sepNavVisRange = "{3628, 1692}";
+		};
+	};
+	57A15DB5125759C0009723E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 57B3E957123584E4000D0C2A /* ChildBrowserViewController.m */;
+		name = "ChildBrowserViewController.m: 42";
+		rLen = 7;
+		rLoc = 977;
+		rType = 0;
+		vrLen = 1178;
+		vrLoc = 1970;
+	};
+	57A15DBC12575A3F009723E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 57B3E955123584E4000D0C2A /* ChildBrowserCommand.m */;
+		name = "ChildBrowserCommand.m: 64";
+		rLen = 0;
+		rLoc = 2167;
+		rType = 0;
+		vrLen = 1579;
+		vrLoc = 1029;
+	};
+	57A15E941257750C009723E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 57A15D9B125756AC009723E3 /* index.html */;
+		name = "index.html: 137";
+		rLen = 0;
+		rLoc = 4956;
+		rType = 0;
+		vrLen = 1692;
+		vrLoc = 3628;
+	};
+	57A15E951257750C009723E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 57A15D99125756AC009723E3 /* loaddata.js */;
+		name = "loaddata.js: 153";
+		rLen = 0;
+		rLoc = 4792;
+		rType = 0;
+		vrLen = 1586;
+		vrLoc = 940;
+	};
+	57A15F23125779FE009723E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 57A15F24125779FE009723E3 /* loaddata.js */;
+		name = "loaddata.js: 133";
+		rLen = 0;
+		rLoc = 3938;
+		rType = 0;
+		vrLen = 1335;
+		vrLoc = 3678;
+	};
+	57A15F24125779FE009723E3 /* loaddata.js */ = {
+		isa = PBXFileReference;
+		name = loaddata.js;
+		path = /PGNew/TK/TK_ServiceDirectory/www/loaddata.js;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1678, 1976}}";
+			sepNavSelRange = "{3938, 0}";
+			sepNavVisRange = "{3678, 1335}";
+		};
 	};
 	57A6897412359D2100B08C22 /* MapViewController.h */ = {
 		uiCtxt = {
@@ -278,18 +338,6 @@
 			sepNavIntBoundsRect = "{{0, 0}, {898, 6006}}";
 			sepNavSelRange = "{11412, 0}";
 			sepNavVisRange = "{9977, 1541}";
-		};
-	};
-	57A689EA1235A3AC00B08C22 /* index.html */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = text.html;
-		name = index.html;
-		path = /PGNew/TK/TK_ServiceDirectory/www/index.html;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {898, 5291}}";
-			sepNavSelRange = "{2259, 0}";
-			sepNavVisRange = "{1504, 1309}";
 		};
 	};
 	57ABAD62123654C400FC486C /* MapViewController.m:333 */ = {
@@ -310,7 +358,7 @@
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	57ABAD75123655CB00FC486C /* ChildBrowserCommand.m:101 */ = {
+	57ABAD75123655CB00FC486C /* ChildBrowserCommand.m:103 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -322,7 +370,7 @@
 		functionName = "-showMap:withDict:";
 		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 101;
+		lineNumber = 103;
 		location = TK_ServiceDirectory;
 		modificationTime = 307708749.72012;
 		originalNumberOfMultipleMatches = 1;
@@ -383,9 +431,9 @@
 	};
 	57B3E955123584E4000D0C2A /* ChildBrowserCommand.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {898, 1664}}";
-			sepNavSelRange = "{3923, 0}";
-			sepNavVisRange = "{2647, 1432}";
+			sepNavIntBoundsRect = "{{0, 0}, {933, 1651}}";
+			sepNavSelRange = "{2167, 0}";
+			sepNavVisRange = "{1029, 1579}";
 		};
 	};
 	57B3E956123584E4000D0C2A /* ChildBrowserViewController.h */ = {
@@ -397,9 +445,9 @@
 	};
 	57B3E957123584E4000D0C2A /* ChildBrowserViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1489, 2184}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1489, 2145}}";
 			sepNavSelRange = "{977, 7}";
-			sepNavVisRange = "{2016, 1123}";
+			sepNavVisRange = "{1970, 1178}";
 		};
 	};
 	57C7443F1238E023003AE204 /* PBXTextBookmark */ = {
@@ -429,7 +477,7 @@
 		path = /Users/joebloggs/Documents/PhoneGapLib/Classes/PhoneGapCommand.h;
 		sourceTree = "<absolute>";
 	};
-	57C744E31238F31A003AE204 /* ChildBrowserCommand.m:114 */ = {
+	57C744E31238F31A003AE204 /* ChildBrowserCommand.m:116 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -441,13 +489,13 @@
 		functionName = "-showMap:withDict:";
 		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 114;
+		lineNumber = 116;
 		location = TK_ServiceDirectory;
 		modificationTime = 307708939.856335;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	57CDD6DE1236E9B7009EC542 /* ChildBrowserCommand.m:126 */ = {
+	57CDD6DE1236E9B7009EC542 /* ChildBrowserCommand.m:128 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -459,13 +507,13 @@
 		functionName = "-showMap:withDict:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 126;
+		lineNumber = 128;
 		location = TK_ServiceDirectory;
 		modificationTime = 307708727.515085;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	57CDD6E21236E9C5009EC542 /* ChildBrowserCommand.m:125 */ = {
+	57CDD6E21236E9C5009EC542 /* ChildBrowserCommand.m:127 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -477,9 +525,9 @@
 		functionName = "-showMap:withDict:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 125;
+		lineNumber = 127;
 		location = TK_ServiceDirectory;
-		modificationTime = 307708727.515136;
+		modificationTime = 307708727.5151361;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};

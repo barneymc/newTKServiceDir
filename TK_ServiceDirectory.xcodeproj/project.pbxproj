@@ -29,6 +29,7 @@
 		305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */; };
 		30E1352710E2C1420031B30D /* PhoneGap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E1352610E2C1420031B30D /* PhoneGap.plist */; };
 		57A15BB3125722FA009723E3 /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A15BB2125722FA009723E3 /* button_right.png */; };
+		57A15D4D12575228009723E3 /* loaddata.js in Sources */ = {isa = PBXBuildFile; fileRef = 57A15D4C12575228009723E3 /* loaddata.js */; };
 		57A6897612359D2100B08C22 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A6897512359D2100B08C22 /* MapViewController.m */; };
 		57A689CF12359FDD00B08C22 /* ChildBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A689CE12359FDD00B08C22 /* ChildBrowserViewController.xib */; };
 		57A689D112359FE900B08C22 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A689D012359FE900B08C22 /* MapView.xib */; };
@@ -80,6 +81,7 @@
 		30E1352610E2C1420031B30D /* PhoneGap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PhoneGap.plist; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* TK_ServiceDirectory_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_ServiceDirectory_Prefix.pch; sourceTree = "<group>"; };
 		57A15BB2125722FA009723E3 /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
+		57A15D4C12575228009723E3 /* loaddata.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = loaddata.js; sourceTree = "<group>"; };
 		57A6897412359D2100B08C22 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		57A6897512359D2100B08C22 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		57A689CE12359FDD00B08C22 /* ChildBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildBrowserViewController.xib; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				301BF56E109A69640062928A /* www */,
+				57A15D4C12575228009723E3 /* loaddata.js */,
 				301BF52D109A57CC0062928A /* PhoneGapLib.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				307C750510C5A3420062BCA9 /* Plugins */,
@@ -331,6 +334,7 @@
 				57B3E958123584E4000D0C2A /* ChildBrowserCommand.m in Sources */,
 				57B3E959123584E4000D0C2A /* ChildBrowserViewController.m in Sources */,
 				57A6897612359D2100B08C22 /* MapViewController.m in Sources */,
+				57A15D4D12575228009723E3 /* loaddata.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
